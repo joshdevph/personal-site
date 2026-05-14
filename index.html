@@ -44,7 +44,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#contact" class="nav-cta">Contact</a></li>
+            <li><a href="#contact" class="nav-cta" id="contact-nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -234,7 +234,13 @@
           <p class="section-subtitle">
             Languages, frameworks, and platforms—including retrieval-augmented AI and workflow automation.
           </p>
-          <div class="skill-grid">
+          <div class="skill-grid-scroll">
+            <div
+              class="skill-grid"
+              role="region"
+              aria-label="Technical skill categories. Scroll sideways to see all groups."
+              tabindex="0"
+            >
             <article class="skill-group">
               <h3>AI, RAG &amp; automation</h3>
               <ul class="chip-list">
@@ -297,6 +303,7 @@
                 <li>Git</li>
               </ul>
             </article>
+            </div>
           </div>
           <div class="general-skills">
             <h3 class="general-skills-title">How I work</h3>
@@ -442,7 +449,8 @@
             </p>
           </div>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:joshuadignadice24@gmail.com">joshuadignadice24@gmail.com</a>
+            <button type="button" class="btn btn-primary" id="contact-open-form-btn">Contact form</button>
+            <a class="btn btn-ghost" href="mailto:joshuadignadice24@gmail.com">joshuadignadice24@gmail.com</a>
             <a class="btn btn-ghost" href="tel:+639913249905">+63 991 324 9905</a>
           </div>
         </div>
@@ -455,6 +463,49 @@
         <a href="#" class="footer-top" aria-label="Back to top">↑</a>
       </div>
     </footer>
+
+    <div
+      class="contact-form-modal"
+      id="contact-form-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-form-modal-title"
+      hidden
+    >
+      <button
+        type="button"
+        class="contact-form-modal-backdrop"
+        id="contact-form-modal-backdrop"
+        aria-label="Close contact form"
+        tabindex="-1"
+      ></button>
+      <div class="contact-form-modal-panel">
+        <header class="contact-form-modal-header">
+          <h2 class="contact-form-modal-title" id="contact-form-modal-title">Contact</h2>
+          <div class="contact-form-modal-actions">
+            <a
+              class="contact-form-modal-external"
+              href="https://dev.ja-dignadice.uk/form/6e89fcfa-d4e4-4e03-a319-16cdfbf2cc9a"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open in new tab</a
+            >
+            <button type="button" class="contact-form-modal-close" id="contact-form-modal-close" aria-label="Close">
+              ×
+            </button>
+          </div>
+        </header>
+        <div class="contact-form-modal-frame">
+          <iframe
+            id="contact-form-iframe"
+            class="contact-form-modal-iframe"
+            title="Contact form"
+            loading="lazy"
+            data-src="https://dev.ja-dignadice.uk/form/6e89fcfa-d4e4-4e03-a319-16cdfbf2cc9a"
+          ></iframe>
+        </div>
+      </div>
+    </div>
 
     <div class="chat-widget" id="chat-widget-root">
       <button
