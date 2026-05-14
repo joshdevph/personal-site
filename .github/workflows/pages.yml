@@ -1,5 +1,22 @@
 # Deploy static site to GitHub Pages.
-# After first push: Repo → Settings → Pages → Build and deployment → Source: GitHub Actions
+#
+# PRIVATE REPOS (free GitHub accounts):
+#   GitHub Pages is NOT available for private repos unless you upgrade (Pro/Team/Enterprise).
+#   Either make this repo PUBLIC (Settings → General → Danger zone → Change repository visibility),
+#   or deploy elsewhere (Netlify, Cloudflare Pages, Vercel) for free with a private repo.
+#
+# FIRST-TIME SETUP (public repo — fixes configure-pages "Not Found"):
+# 1. Push this workflow to your default branch (usually `main`).
+# 2. Open the repo on GitHub → Settings → Pages.
+# 3. Under "Build and deployment" → "Source", choose "GitHub Actions"
+#    (NOT "Deploy from a branch"). Save if prompted.
+# 4. Re-run this workflow: Actions → "Deploy GitHub Pages" → "Re-run all jobs".
+#
+# Docs: https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
+#
+# Optional: `configure-pages` supports `enablement: true` with a PAT (not GITHUB_TOKEN)
+# if you need to enable Pages via API — see action README on actions/configure-pages.
+
 name: Deploy GitHub Pages
 
 on:
@@ -44,4 +61,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
